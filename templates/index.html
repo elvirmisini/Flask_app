@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <style>
+        body{
+        background-color:#06495A;
+        }
+        #own_cv{
+        color:white;
+        }
+        #start_btn{
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(78,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        color:white;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <img src="https://images.clipartlogo.com/files/istock/previews/9842/98425255-cv-resume-icon-modern-flat-2-0-style.jpg" alt="cv_Icon">
+    <h1 id="own_cv">Build your own CV!</h1>
+    <form action = "http://127.0.0.1:5000" method = "post">
+     <p><input type = "submit" value = "Let's start" id="start_btn"/></p>
+              </form>
+</center>
+</body>
+</html>
