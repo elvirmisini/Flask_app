@@ -1,6 +1,8 @@
-from flask import Flask, redirect, url_for, render_template, request, jsonify, app
+from flask import Flask, redirect, url_for, render_template, request, jsonify, app, make_response
 import json
+import pdfkit
 from pages import Page
+import os
 
 app = Flask(__name__)
 
@@ -16,6 +18,10 @@ def second():
 
     return Page.second()
 
+@app.route("/pdfCV")
+def pdf_template():
+
+    return Page.pdf_generate()
 if __name__ == '__main__':
     app.run(debug=True)
 
