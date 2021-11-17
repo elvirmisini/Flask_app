@@ -3,10 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <title>Pdf</title>
+    <style>
+        #div1{
+        background-color: #181818;
+        width:900px;
+        height:100%;
+        }
+        #title{
+        color:white;
+        }
+        #div2{
+        background-color: #181818;
+        }
+        #div3{
+        background-color:white ;
+        }
+        .black-white{
+        color:white;
+        }
+        table{
+        width:100%
+        }
+        #td1{
+        width:20%;
+        }
+        #td2{
+        width:80%
+        }
+    </style>
 </head>
 <body>
-<h1>Your name is Bitch: </h1>
-<h3>Yor location is </h3>
-
+<!--<h1>Your name is Bitch: </h1>
+<h3>Yor location is </h3>-->
+<center>
+<div id="div1">
+<h1 id="title">CV of {{ fname }} {{ lname }}</h1>
+    <table>
+        <tr>
+            <td id="td1">
+                <div id="div2">
+                    <h4 class="black-white">Name: {{fname}}</h4>
+                    <h4 class="black-white">Surname: {{lname}}</h4>
+                    <h4 class="black-white">Birthday: {{birthday}}</h4>
+                    <h4 class="black-white">Address: {{address}}</h4>
+                    <h4 class="black-white">Email: {{email}}</h4>
+                    <h4 class="black-white">Driver licence: {{DriverLicence}}</h4>
+                </div>
+            </td>
+                        <td id="td2">
+                <div id="div3">
+                   <h4>About Me:</h4>
+                   <p> {{AboutMe}}</p>
+                   <h4>Experience:</h4>
+                   <p>{{Experience}}</p>
+                   <h4>Education:</h4>
+                   <p>{{Education}}</p>
+                   <h4>Skills:</h4>
+                   <p>{{Skills}}</p>
+                   <h4>Hobbies:</h4>
+                   <p>{{Hobbies}}</p>
+                    <table>
+                        <tr>
+                            <td><strong>Language 1</strong></td>
+                            <td><strong>Language 2</strong></td>
+                        </tr>
+                        <tr>
+                            <td>{{Language1}}</td>
+                            <td>{{Language2}}</td>
+                        </tr>
+                                                <tr>
+                            <td><strong>Language 3</strong></td>
+                            <td><strong>Language 4</strong></td>
+                        </tr>
+                        <tr>
+                            <td>{{Language3}}</td>
+                            <td>{{Language4}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+</center>
 </body>
 </html>

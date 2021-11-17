@@ -33,6 +33,7 @@ class Page(object):
             Language2 = request.form['Language2']
             Language3 = request.form['Language3']
             Language4 = request.form['Language4']
+            return redirect(url_for('pdfCV'))
         return render_template('second.html')
 
     def pdf_generate(self):
