@@ -18,10 +18,11 @@ def second():
 
     return Page.second()
 
-@app.route("/pdfCV")
+@app.route("/pdfCV",methods = ['POST', 'GET'])
 def pdf_template():
 
     return Page.pdf_generate()
+
 if __name__ == '__main__':
     app.run(debug=True)
 
