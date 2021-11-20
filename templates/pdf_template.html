@@ -1,9 +1,8 @@
-{% block title %}CV{% endblock %}
 {% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pdf</title>
+<title>CV of {{fname}} {{lname}}</title>
     <style>
         #div1{
         background-image: linear-gradient(to bottom, #0F2027,#000000);
@@ -86,12 +85,20 @@
                             <td>{{Language2}}</td>
                         </tr>
                                                 <tr>
+                            <td>{{levelL1}}</td>
+                            <td>{{levelL2}}</td>
+                        </tr>
+                                                <tr>
                             <td><strong class="four">Language 3</strong></td>
                             <td><strong class="four">Language 4</strong></td>
                         </tr>
                         <tr>
                             <td>{{Language3}}</td>
                             <td>{{Language4}}</td>
+                        </tr>
+                                                <tr>
+                            <td>{{levelL3}}</td>
+                            <td>{{levelL4}}</td>
                         </tr>
                     </table>
                 </div>
