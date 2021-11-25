@@ -5,18 +5,26 @@
 <title>CV of {{fname}} {{lname}}</title>
     <style>
         #div1{
-        background-image: linear-gradient(to bottom, #0F2027,#000000);
+        background-color:#282828;
         width:900px;
         height:100%;
         }
+        img {
+          width: 200px;
+          height: auto;
+          border-radius: 5px;
+        }
         #title{
+        padding:20px;
         color:#399890;
         }
         #div2{
-        padding:3px;
+        padding:10px;
+        height:inherit;
         }
         #div3{
         background-color:#CBCBCB ;
+        height:inherit;
         padding:20px;
         border-radius:  15px 50px 30px;
         }
@@ -55,6 +63,7 @@
         <tr>
             <td id="td1">
                 <div id="div2">
+                    <img src="{{ user_image }}" alt="User Image">
                     <h5 class="black-white">Name: {{fname}}</h5>
                     <h5 class="black-white">Surname: {{lname}}</h5>
                     <h5 class="black-white">Birthday: {{birthday}}</h5>
@@ -85,8 +94,8 @@
                             <td>{{Language2}}</td>
                         </tr>
                                                 <tr>
-                            <td>{{levelL1}}</td>
-                            <td>{{levelL2}}</td>
+                            <td>Level: {{levelL1}}</td>
+                            <td>Level: {{levelL2}}</td>
                         </tr>
                                                 <tr>
                             <td><strong class="four">Language 3</strong></td>
@@ -97,8 +106,8 @@
                             <td>{{Language4}}</td>
                         </tr>
                                                 <tr>
-                            <td>{{levelL3}}</td>
-                            <td>{{levelL4}}</td>
+                            <td>Level: {{levelL3}}</td>
+                            <td>Level: {{levelL4}}</td>
                         </tr>
                     </table>
                 </div>

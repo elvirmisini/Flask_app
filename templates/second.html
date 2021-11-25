@@ -74,15 +74,15 @@ margin:auto;
 </div>
 
 <div style="padding-left:20px">
-<form action="/pdfCV" method="POST">
+<form action="/pdfCV" method="POST" enctype=multipart/form-data>
   <fieldset id="CVborder">
     <legend  >CV:</legend>
       <table>
           <tr>
-              <td><label for="Photo">Chose a photo:</label><br></td>
+              <td><label for="file">Chose a photo:</label><br></td>
           </tr>
           <tr>
-              <td><input type="file" id="Photo" name="Photo" accept="image/*"></td>
+              <td><input type="file" id="file" name="file" accept="image/*"></td>
           </tr>
           <tr>
               <td>    <label for="fname">First name:</label><br></td>
