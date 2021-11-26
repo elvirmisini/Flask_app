@@ -22,6 +22,16 @@ def second():
 
     return Page.second()
 
+@app.route("/third",methods = ['POST', 'GET'])
+def third():
+
+    return Page.third()
+
+@app.route("/about",methods = ['POST', 'GET'])
+def about():
+
+    return Page.about()
+
 @app.route("/pdfCV",methods = ['POST', 'GET'])
 def pdf_template():
 

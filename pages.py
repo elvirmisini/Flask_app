@@ -31,6 +31,12 @@ class Page(object):
     def second(self):
         return render_template('second.html')
 
+    def third(self):
+        return render_template('third.html')
+
+    def about(self):
+        return render_template('about.html')
+
     def pdf_generate(self):
         if request.method == 'POST':
             # check if the post request has the file part
