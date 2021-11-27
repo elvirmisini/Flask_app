@@ -74,7 +74,7 @@ margin:auto;
 </div>
 
 <div style="padding-left:20px">
-<form action="/" method="POST" enctype=multipart/form-data>
+<form action="/pdfCover" method="POST" enctype=multipart/form-data>
   <fieldset id="Coverborder">
     <legend  >Cover Letter:</legend>
       <table>
@@ -88,36 +88,29 @@ margin:auto;
           </tr>
 
           <tr>
-              <td> <label for="birthday">Birthday:</label> </td>
+              <td><label for="PhoneNumber">Phone Number:</label></td>
               <td><label for="email">Enter your email:</label></td>
           </tr>
           <tr>
-              <td><input type="date" id="birthday" name="birthday"></td>
+
+              <td><input type="tel" id="PhoneNumber" name="PhoneNumber"  placeholder="+123-4567-8901"></td>
               <td><input type="email" id="email" name="email"></td>
           </tr>
           <tr>
               <td> <label for="address">Address/Zipcode:</label> </td>
-              <td> <label for="DriverLicence">Driver Licence(Yes/No):</label> </td>
-          </tr>
-          <tr>
-              <td>    <input type="text" id="address" name="address" ><br></td>
-              <td>    <input type="text" id="DriverLicence" name="DriverLicence" ></td>
-          </tr>
-          <tr>
-              <td>    <label for="city">City:</label><br></td>
               <td>    <label for="country">Country:</label><br></td>
           </tr>
           <tr>
-              <td>    <input type="text" id="city" name="city" ><br></td>
+              <td>    <input type="text" id="address" name=" " ><br></td>
               <td>    <input type="text" id="country" name="country" ><br></td>
           </tr>
-           <tr>
+          <tr>
+              <td>    <label for="city">City:</label><br></td>
               <td> <label for="TodayDate">Today Date:</label> </td>
-              <td><label for="PhoneNumber">Phone Number:</label></td>
           </tr>
           <tr>
+              <td>    <input type="text" id="city" name="city" ><br></td>
               <td><input type="date" id="TodayDate" name="TodayDate"></td>
-              <td><input type="tel" id="PhoneNumber" name="PhoneNumber"  placeholder="+123-4567-8901"></td>
           </tr>
           <tr>
               <td><label for="Title">Title:</label></td>
@@ -144,6 +137,9 @@ margin:auto;
                 <option value="Regards">Regards</option>
                 </select>
             </td>
+          </tr>
+          <tr>
+          <td>    <input type="submit" value="Submit"></td>
           </tr>
           </table>
   </fieldset>

@@ -37,6 +37,11 @@ def pdf_template():
 
     return Page.pdf_generate()
 
+@app.route("/pdfCoverLetter",methods = ['POST', 'GET'])
+def pdf_coverLetter_template():
+
+    return Page.pdf_coverLetter_template()
+
 if __name__ == '__main__':
     app.run(debug=True)
 

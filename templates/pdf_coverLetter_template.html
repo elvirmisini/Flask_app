@@ -1,0 +1,78 @@
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>Cover Letter of {{fname}} {{lname}}</title>
+    <style>
+        #div1{
+        background-color:#282828;
+        color:#CBCBCB ;
+        width:900px;
+        height:25%;
+        }
+        #div2{
+        background-color:#CBCBCB ;
+        color:#282828;
+        width:900px;
+        height:75%;
+        }
+        table{
+        width:80%;
+        }
+        p{
+        width:80%;
+        text-align:left;
+        }
+        .paragraph{
+        word-break: break-word;
+        }
+        #title1{
+        float:left;
+        padding-left:90px;
+        }
+        td{
+        color:#CBCBCB ;
+        }
+        .left{
+        float:left;
+        }
+        .right{
+        float:right;
+        }
+    </style>
+</head>
+<body>
+<!--<h1>Your name is Bitch: </h1>
+<h3>Yor location is </h3>-->
+<center>
+<div id="div1">
+<h1 id="title1">{{ fname }} {{ lname }}</h1>
+<table>
+    <tr>
+        <td class="left"></td>
+        <td class="right">{{address}}</td>
+    </tr>
+    <tr>
+        <td class="left">{{TodayDate}}</td>
+        <td class="right">{{city}}, {{country}}</td>
+    </tr>
+    <tr>
+        <td class="left"></td>
+        <td class="right">{{PhoneNumber}}</td>
+    </tr>
+    <tr>
+        <td class="left"></td>
+        <td class="right">{{email}}</td>
+    </tr>
+</table>
+</div>
+    <div id="div2">
+        <p class="paragraph">Re: {{Title}}</p>
+        <p class="paragraph"> {{AboutMe}}</p>
+        <p>{{EndWith}}</p>
+        <p>{{ fname }} {{ lname }}</p>
+    </div>
+</center>
+</body>
+</html>
+{% endblock %}

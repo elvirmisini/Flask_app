@@ -81,3 +81,21 @@ class Page(object):
                 response.headers['Content-Type'] = 'application/pdf'
                 response.headers['Content-Disposition'] = 'inline;filename=CV of '+fname+lname+'.pdf'
                 return response
+    def pdf_coverLetter_template(self):
+                fname = request.form.get('fname')
+                lname = request.form.get('lname')
+                TodayDate = request.form.get('TodayDate')
+                email = request.form.get('email')
+                address = request.form.get('address')
+                Title = request.form.get('Title')
+                AboutMe = request.form.get('AboutMe')
+                levelL4 = request.form.get('levelL4')
+
+                full_filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                return render_template("pdf_template.html",  fname=fname, lname=lname,email=email, address=address,AboutMe=AboutMe,)
+                # render = render_template("pdf_template.html",display_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+                pdf = pdfkit.from_string(render, False)
+                response = make_response(pdf)
+                response.headers['Content-Type'] = 'application/pdf'
+                response.headers['Content-Disposition'] = 'inline;filename=CV of ' + fname + lname + '.pdf'
+                return response
