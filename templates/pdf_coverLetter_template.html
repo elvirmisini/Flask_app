@@ -8,13 +8,13 @@
         background-color:#282828;
         color:#CBCBCB ;
         width:900px;
-        height:25%;
+        height:20%;
         }
         #div2{
         background-color:#CBCBCB ;
         color:#282828;
         width:900px;
-        height:75%;
+        height:80%;
         }
         table{
         width:80%;
@@ -24,7 +24,15 @@
         text-align:left;
         }
         .paragraph{
+        font-size:20px;
         word-break: break-word;
+        padding-top:20px;
+        }
+        #paragraph-height{
+        text-align: left;
+        line-height: 1.4;
+         white-space: pre-wrap;
+         width:80%;
         }
         #title1{
         float:left;
@@ -68,9 +76,9 @@
 </div>
     <div id="div2">
         <p class="paragraph">Re: {{Title}}</p>
-        <p class="paragraph"> {{AboutMe}}</p>
-        <p>{{EndWith}}</p>
-        <p>{{ fname }} {{ lname }}</p>
+        <div class="paragraph" id="paragraph-height"> {{AboutMe}}</div>
+        <p>{{EndWith}},</p>
+        <p>{{ fname }} {{ lname }}.</p>
     </div>
 </center>
 </body>

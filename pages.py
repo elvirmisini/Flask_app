@@ -59,9 +59,12 @@ class Page(object):
                 email = request.form.get('email')
                 address = request.form.get('address')
                 DriverLicence = request.form.get('DriverLicence')
+                country=request.form.get('country')
+                city=request.form.get('city')
                 AboutMe = request.form.get('AboutMe')
                 Education = request.form.get('Education')
                 Experience = request.form.get('Experience')
+                AditionalInfo=request.form.get('AditionalInfo')
                 Skills = request.form.get('Skills')
                 Hobbies = request.form.get('Hobbies')
                 Language1 = request.form.get('Language1')
@@ -74,28 +77,31 @@ class Page(object):
                 levelL4=request.form.get('levelL4')
 
                 full_filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                return render_template("pdf_template.html",user_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
-                # render = render_template("pdf_template.html",display_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+                return render_template("pdf_template.html",user_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+                # render = render_template("pdf_template.html",display_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
                 pdf = pdfkit.from_string(render, False)
                 response = make_response(pdf)
                 response.headers['Content-Type'] = 'application/pdf'
                 response.headers['Content-Disposition'] = 'inline;filename=CV of '+fname+lname+'.pdf'
                 return response
+
     def pdf_coverLetter_template(self):
                 fname = request.form.get('fname')
                 lname = request.form.get('lname')
+                PhoneNumber=request.form.get('PhoneNumber')
                 TodayDate = request.form.get('TodayDate')
                 email = request.form.get('email')
                 address = request.form.get('address')
+                country=request.form.get('country')
+                city=request.form.get('city')
                 Title = request.form.get('Title')
                 AboutMe = request.form.get('AboutMe')
-                levelL4 = request.form.get('levelL4')
+                EndWith = request.form.get('EndWith')
 
-                full_filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                return render_template("pdf_template.html",  fname=fname, lname=lname,email=email, address=address,AboutMe=AboutMe,)
-                # render = render_template("pdf_template.html",display_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+                return render_template("pdf_coverLetter_template.html",fname=fname, lname=lname,email=email,address=address,country=country,city=city,Title=Title,PhoneNumber=PhoneNumber,TodayDate=TodayDate,AboutMe=AboutMe,EndWith=EndWith)
+                # render = render_template("pdf_coverLetter_template.html",fname=fname, lname=lname,email=email,address=address,country=country,city=city,Title=Title,PhoneNumber=PhoneNumber,TodayDate=TodayDate,AboutMe=AboutMe,EndWith=EndWith)
                 pdf = pdfkit.from_string(render, False)
                 response = make_response(pdf)
                 response.headers['Content-Type'] = 'application/pdf'
-                response.headers['Content-Disposition'] = 'inline;filename=CV of ' + fname + lname + '.pdf'
+                response.headers['Content-Disposition'] = 'inline;filename=Cover Letter of ' + fname + lname + '.pdf'
                 return response

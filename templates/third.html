@@ -65,7 +65,7 @@ margin:auto;
 <body>
 
 <div class="header">
-  <a href="#default" class="logo">Make your CV</a>
+  <a href="#default" class="logo">Make your Cover Letter</a>
   <div class="header-right">
     <a class="active" href="/second">CV</a>
     <a href="/third">Cover Letter</a>
@@ -74,7 +74,7 @@ margin:auto;
 </div>
 
 <div style="padding-left:20px">
-<form action="/pdfCover" method="POST" enctype=multipart/form-data>
+<form action="/pdfCoverLetter" method="POST" enctype=multipart/form-data>
   <fieldset id="Coverborder">
     <legend  >Cover Letter:</legend>
       <table>
@@ -101,7 +101,7 @@ margin:auto;
               <td>    <label for="country">Country:</label><br></td>
           </tr>
           <tr>
-              <td>    <input type="text" id="address" name=" " ><br></td>
+              <td>    <input type="text" id="address" name="address" ><br></td>
               <td>    <input type="text" id="country" name="country" ><br></td>
           </tr>
           <tr>
