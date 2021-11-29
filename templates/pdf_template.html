@@ -80,8 +80,10 @@
                    <p  class="paragraph">{{Experience}}</p>
                    <h4 class="four">Education:</h4>
                    <p class="paragraph">{{Education}}</p>
+                    {% if AditionalInfo %}
                    <h4 class="four">Aditional Info:</h4>
                    <p class="paragraph">{{AditionalInfo}}</p>
+                    {% endif %}
                    <h4 class="four">Skills:</h4>
                    <p class="paragraph">{{Skills}}</p>
                    <h4 class="four">Hobbies:</h4>
@@ -89,27 +91,41 @@
                     <table>
                         <tr>
                             <td><strong class="four">Language 1</strong></td>
+                            {% if Language2 %}
                             <td><strong class="four">Language 2</strong></td>
+                            {% endif %}
                         </tr>
                         <tr>
                             <td>{{Language1}}</td>
                             <td>{{Language2}}</td>
                         </tr>
-                                                <tr>
+                        <tr>
                             <td>Level: {{levelL1}}</td>
+                            {% if Language2 %}
                             <td>Level: {{levelL2}}</td>
+                            {% endif %}
                         </tr>
-                                                <tr>
+                        <tr>
+                            {% if Language3 %}
                             <td><strong class="four">Language 3</strong></td>
+                            {% endif %}
+                            {% if Language4 %}
                             <td><strong class="four">Language 4</strong></td>
+                            {% endif %}
+
                         </tr>
                         <tr>
                             <td>{{Language3}}</td>
                             <td>{{Language4}}</td>
                         </tr>
-                                                <tr>
+                        <tr>
+                            {% if Language3 %}
                             <td>Level: {{levelL3}}</td>
+                            {% endif %}
+
+                            {% if Language4 %}
                             <td>Level: {{levelL4}}</td>
+                            {% endif %}
                         </tr>
                     </table>
                 </div>
