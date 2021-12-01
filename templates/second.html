@@ -76,7 +76,7 @@ min-width:fit-content;
 </div>
 
 <div>
-<form action="/pdfCV" method="POST" enctype=multipart/form-data>
+<form  action="/pdfCV" method="POST" enctype=multipart/form-data>
   <fieldset id="CVborder">
     <legend  >CV:</legend>
       <table>
@@ -84,15 +84,15 @@ min-width:fit-content;
               <td><label for="file">Chose a photo:</label><br></td>
           </tr>
           <tr>
-              <td><input type="file" id="file" name="file" accept="image/*" required></td>
+              <td><input class="form-control" type="file" id="file" name="file" accept="image/*" required></td>
           </tr>
           <tr>
               <td>    <label for="fname">First name:</label><br></td>
               <td>    <label for="lname">Last name:</label><br></td>
           </tr>
           <tr>
-              <td>    <input type="text" id="fname" name="fname" placeholder="John" ><br></td>
-              <td>    <input type="text" id="lname" name="lname" placeholder="Doe"><br></td>
+              <td>    <input class="form-control"  type="text" id="fname" name="fname" placeholder="John" ></td>
+              <td>    <input class="form-control"  type="text" id="lname" name="lname" placeholder="Doe"></td>
           </tr>
 
           <tr>
@@ -100,24 +100,24 @@ min-width:fit-content;
               <td><label for="email">Enter your email:</label></td>
           </tr>
           <tr>
-              <td><input type="date" id="birthday" name="birthday"></td>
-              <td><input type="email" id="email" name="email"placeholder="JohnDoe@example.com"></td>
+              <td><input class="form-control" type="date" id="birthday" name="birthday"></td>
+              <td><input class="form-control" type="email" id="email" name="email"placeholder="JohnDoe@example.com"></td>
           </tr>
           <tr>
               <td> <label for="address">Address/Zipcode:</label> </td>
               <td> <label for="DriverLicence">Driver Licence(Yes/No):</label> </td>
           </tr>
           <tr>
-              <td>    <input type="text" id="address" name="address" placeholder="St. Where/ 10000"><br></td>
-              <td>    <input type="text" id="DriverLicence" name="DriverLicence" placeholder="Yes/No"></td>
+              <td>    <input class="form-control" type="text" id="address" name="address" placeholder="St. Where/ 10000"></td>
+              <td>    <input class="form-control" type="text" id="DriverLicence" name="DriverLicence" placeholder="Yes/No"></td>
           </tr>
           <tr>
               <td>    <label for="city">City:</label><br></td>
               <td>    <label for="country">Country:</label><br></td>
           </tr>
           <tr>
-              <td>    <input type="text" id="city" name="city" placeholder="London"><br></td>
-              <td>    <input type="text" id="country" name="country" placeholder="UK"><br></td>
+              <td>    <input class="form-control" type="text" id="city" name="city" placeholder="London"><br></td>
+              <td>    <input class="form-control" type="text" id="country" name="country" placeholder="UK"><br></td>
           </tr>
 
 
@@ -125,49 +125,49 @@ min-width:fit-content;
               <td><label for="AboutMe">About Me:</label></td>
           </tr>
           <tr>
-              <td colspan="2">    <textarea rows="4" cols="50" id="AboutMe" name="AboutMe" placeholder="Enter text here..." ></textarea> <br></td>
+              <td colspan="2">    <textarea class="form-control" rows="4" cols="50" id="AboutMe" name="AboutMe" placeholder="Enter text here..." ></textarea> <br></td>
           </tr>
           <tr>
               <td><label for="Education">Education:</label></td>
           </tr>
           <tr>
-              <td colspan="2">    <textarea rows="4" cols="50" id="Education" name="Education" placeholder="Enter text here..."></textarea> <br></td>
+              <td colspan="2">    <textarea class="form-control" rows="4" cols="50" id="Education" name="Education" placeholder="Enter text here..."></textarea> <br></td>
           </tr>
           <tr>
               <td><label for="Experience">Experience:</label></td>
           </tr>
           <tr>
-              <td colspan="2">    <textarea rows="4" cols="50" id="Experience" name="Experience" placeholder="Enter text here..."></textarea> <br></td>
+              <td colspan="2">    <textarea class="form-control" rows="4" cols="50" id="Experience" name="Experience" placeholder="Enter text here..."></textarea> <br></td>
           </tr>
             <tr>
               <td><label for="AditionalInfo">Aditional Info:</label></td>
           </tr>
           <tr>
-              <td colspan="2">    <textarea rows="4" cols="50" id="AditionalInfo" name="AditionalInfo" placeholder="Enter text here..."></textarea> <br></td>
+              <td colspan="2">    <textarea class="form-control" rows="4" cols="50" id="AditionalInfo" name="AditionalInfo" placeholder="Enter text here..."></textarea> <br></td>
           </tr>
           <tr>
               <td><label for="Skills">Skills:</label></td>
           </tr>
           <tr>
-              <td colspan="2">    <textarea rows="2" cols="40" id="Skills" name="Skills" placeholder="Write your skills here..."></textarea> <br></td>
+              <td colspan="2">    <textarea class="form-control" rows="2" cols="40" id="Skills" name="Skills" placeholder="Write your skills here..."></textarea> <br></td>
           </tr>
           <tr>
               <td><label for="Hobbies">Hobies and Interests:</label></td>
           </tr>
           <tr>
-              <td colspan="2">    <textarea rows="2" cols="40" id="Hobbies" name="Hobbies" placeholder="Write your skills here..."></textarea> <br></td>
+              <td colspan="2">    <textarea class="form-control" rows="2" cols="40" id="Hobbies" name="Hobbies" placeholder="Write your skills here..."></textarea> <br></td>
           </tr>
           <tr>
               <td><label for="Language1">Language 1:</label></td>
               <td><label for="Language2">Language 2:</label></td>
           </tr>
           <tr>
-              <td><input type="text" id="Language1" name="Language1" placeholder="Language1"></td>
-              <td><input type="text" id="Language2" name="Language2" placeholder="Language2"></td>
+              <td><input class="form-control" type="text" id="Language1" name="Language1" placeholder="Language1"></td>
+              <td><input class="form-control" type="text" id="Language2" name="Language2" placeholder="Language2"></td>
           </tr>
           <tr>
               <td>
-                <select name="levelL1" id="level-select">
+                <select class="form-select" aria-label="Default select example" name="levelL1" id="level-select">
                 <option value="None">none</option>
                 <option value="Native">Native</option>
                 <option value="A1">A1</option>
@@ -179,7 +179,7 @@ min-width:fit-content;
                 </select>
             </td>
                             <td>
-                <select name="levelL2" id="level-select1">
+                <select class="form-select" aria-label="Default select example" name="levelL2" id="level-select1">
                 <option value="None">none</option>
                 <option value="Native">Native</option>
                 <option value="A1">A1</option>
@@ -196,12 +196,12 @@ min-width:fit-content;
               <td><label for="Language4">Language 4:</label></td>
           </tr>
           <tr>
-              <td><input type="text" id="Language3" name="Language3" placeholder="Language3"></td>
-              <td><input type="text" id="Language4" name="Language4" placeholder="Language4"></td>
+              <td><input class="form-control" type="text" id="Language3" name="Language3" placeholder="Language3"></td>
+              <td><input class="form-control" type="text" id="Language4" name="Language4" placeholder="Language4"></td>
           </tr>
                     <tr>
               <td>
-                <select name="levelL3" id="level-select2">
+                <select class="form-select" aria-label="Default select example" name="levelL3" id="level-select2">
                 <option value="None">none</option>
                 <option value="Native">Native</option>
                 <option value="A1">A1</option>
@@ -213,7 +213,7 @@ min-width:fit-content;
                 </select>
             </td>
                             <td>
-                <select name="levelL4" id="level-select3">
+                <select class="form-select" aria-label="Default select example" name="levelL4" id="level-select3">
                 <option value="None">none</option>
                 <option value="Native">Native</option>
                 <option value="A1">A1</option>
@@ -227,7 +227,7 @@ min-width:fit-content;
           </tr>
 
           <tr>
-          <td>    <input type="submit" value="Submit"></td>
+          <td><br>    <input class="btn btn-outline-success" type="submit" value="Print"></td>
           </tr>
           </table>
   </fieldset>
