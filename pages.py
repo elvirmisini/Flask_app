@@ -1,4 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, jsonify, app,make_response,flash
+from PIL import Image
+import base64
 import json
 import os
 import pdfkit
@@ -77,13 +79,24 @@ class Page(object):
                 levelL4=request.form.get('levelL4')
 
                 full_filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-                return render_template("pdf_template.html",user_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
-                # render = render_template("pdf_template.html",display_image=full_filename,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+
+                with open(full_filename, "rb") as image_file:
+                    encoded_string = base64.b64encode(image_file.read())
+                    img=encoded_string.decode("utf-8")
+                    image="data:image/jpeg;base64,"+img
+
+
+                # return render_template("pdf_template.html",foto=foto,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+                render = render_template("pdf_template.html",user_image=image,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
                 pdf = pdfkit.from_string(render, False)
                 response = make_response(pdf)
                 response.headers['Content-Type'] = 'application/pdf'
                 response.headers['Content-Disposition'] = 'inline;filename=CV of '+fname+lname+'.pdf'
+                if os.path.exists(full_filename):
+                    os.remove(full_filename)
                 return response
+
+
 
     def pdf_coverLetter_template(self):
                 fname = request.form.get('fname')
@@ -98,8 +111,8 @@ class Page(object):
                 AboutMe = request.form.get('AboutMe')
                 EndWith = request.form.get('EndWith')
 
-                return render_template("pdf_coverLetter_template.html",fname=fname, lname=lname,email=email,address=address,country=country,city=city,Title=Title,PhoneNumber=PhoneNumber,TodayDate=TodayDate,AboutMe=AboutMe,EndWith=EndWith)
-                # render = render_template("pdf_coverLetter_template.html",fname=fname, lname=lname,email=email,address=address,country=country,city=city,Title=Title,PhoneNumber=PhoneNumber,TodayDate=TodayDate,AboutMe=AboutMe,EndWith=EndWith)
+                # return render_template("pdf_coverLetter_template.html",fname=fname, lname=lname,email=email,address=address,country=country,city=city,Title=Title,PhoneNumber=PhoneNumber,TodayDate=TodayDate,AboutMe=AboutMe,EndWith=EndWith)
+                render = render_template("pdf_coverLetter_template.html",fname=fname, lname=lname,email=email,address=address,country=country,city=city,Title=Title,PhoneNumber=PhoneNumber,TodayDate=TodayDate,AboutMe=AboutMe,EndWith=EndWith)
                 pdf = pdfkit.from_string(render, False)
                 response = make_response(pdf)
                 response.headers['Content-Type'] = 'application/pdf'

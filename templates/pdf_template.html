@@ -6,9 +6,9 @@
 <title>CV of {{fname}} {{lname}}</title>
     <style>
         #div1{
-        background-color:#282C34;;
+        background-color:#282C34;
         width:900px;
-        height:auto;
+        height:100%;
         }
         img {
           width: 200px;
@@ -51,9 +51,17 @@
         display:flex;
         width:inherit;
         word-break: break-word;
+        font-size: 15pt;
         }
         .four{
         color:#AC6329;
+        font-size: 20pt;
+        }
+        td{
+        border: hidden;
+        }
+        .font{
+        font-size: 15pt;
         }
     </style>
 </head>
@@ -67,7 +75,9 @@
         <tr>
             <td id="td1">
                 <div id="div2">
-                    <img src="{{ user_image }}" alt="User Image">
+<!--                   <img id="result1" src="" alt="as"></img>-->
+                    <img id="result1" src="{{user_image}}">
+
                     <h5 class="black-white fw-lighter fs-6"><br>Name: {{fname}}</h5>
                     <h5 class="black-white fw-lighter fs-6">Surname: {{lname}}</h5>
                     <h5 class="black-white fw-lighter fs-6">Birthday: {{birthday}}</h5>
@@ -100,8 +110,8 @@
                             {% endif %}
                         </tr>
                         <tr>
-                            <td class="fw-lighter">{{Language1}}</td>
-                            <td class="fw-lighter">{{Language2}}</td>
+                            <td class="fw-lighter font">{{Language1}}</td>
+                            <td class="fw-lighter font">{{Language2}}</td>
                         </tr>
                         <tr>
                             <td class="fw-lighter">Level: {{levelL1}}</td>
@@ -119,16 +129,16 @@
 
                         </tr>
                         <tr>
-                            <td class="fw-lighter">{{Language3}}</td>
-                            <td class="fw-lighter">{{Language4}}</td>
+                            <td class="fw-lighter font">{{Language3}}</td>
+                            <td class="fw-lighter font">{{Language4}}</td>
                         </tr>
                         <tr>
                             {% if Language3 %}
-                            <td class="fw-lighter">Level: {{levelL3}}</td>
+                            <td class="fw-lighter font">Level: {{levelL3}}</td>
                             {% endif %}
 
                             {% if Language4 %}
-                            <td class="fw-lighter">Level: {{levelL4}}</td>
+                            <td class="fw-lighter font">Level: {{levelL4}}</td>
                             {% endif %}
                         </tr>
                     </table>

@@ -1,6 +1,6 @@
 from flask import Flask, redirect, url_for, render_template, request, jsonify, app, make_response
 import json
-import pdfkit
+import pdfkit as pdf
 from pages import Page
 import os
 from werkzeug.utils import secure_filename
