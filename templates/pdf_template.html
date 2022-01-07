@@ -17,7 +17,7 @@
         }
         #title{
         padding:20px;
-        color:#399890;
+        color:#CBCBCB;
         }
         #div2{
         padding:10px;
@@ -32,7 +32,7 @@
         border-radius:  15px 50px 30px;
         }
         .black-white{
-        color:#399890;
+        color:#CBCBCB;
         display:flex;
         width:inherit;
         word-break: break-word;
@@ -66,8 +66,6 @@
     </style>
 </head>
 <body>
-<!--<h1>Your name is Bitch: </h1>
-<h3>Yor location is </h3>-->
 <center>
 <div id="div1">
 <h1 id="title">CV of {{ fname }} {{ lname }}</h1>
@@ -75,15 +73,14 @@
         <tr>
             <td id="td1">
                 <div id="div2">
-<!--                   <img id="result1" src="" alt="as"></img>-->
                     <img id="result1" src="{{user_image}}">
 
-                    <h5 class="black-white fw-lighter fs-6"><br>Name: {{fname}}</h5>
-                    <h5 class="black-white fw-lighter fs-6">Surname: {{lname}}</h5>
-                    <h5 class="black-white fw-lighter fs-6">Birthday: {{birthday}}</h5>
-                    <h5 class="black-white fw-lighter fs-6">Address: {{address}}/{{country}}, {{city}}</h5>
-                    <h5 class="black-white fw-lighter fs-6">Email: {{email}}</h5>
-                    <h5 class="black-white fw-lighter fs-6">Driver licence: {{DriverLicence}}</h5>
+                    <p class="black-white fw-lighter fs-6"><br>Name: {{fname}}</p>
+                    <p class="black-white fw-lighter fs-6">Surname: {{lname}}</p>
+                    <p class="black-white fw-lighter fs-6">Birthday: {{birthday}}</p>
+                    <p class="black-white fw-lighter fs-6">Address: {{address}}/{{country}}, {{city}}</p>
+                    <p class="black-white fw-lighter fs-6">Email: {{email}}</p>
+                    <p class="black-white fw-lighter fs-6">Driver licence: {{DriverLicence}}</p>
                 </div>
             </td>
                         <td id="td2">
