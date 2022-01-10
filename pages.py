@@ -86,12 +86,12 @@ class Page(object):
                     image="data:image/jpeg;base64,"+img
 
 
-                # return render_template("pdf_template.html",foto=foto,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
+                # return render_template("pdf_template.html",user_image=image,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
                 render = render_template("pdf_template.html",user_image=image,fname=fname,lname=lname,birthday=birthday,email=email,address=address,country=country,city=city,DriverLicence=DriverLicence,AboutMe=AboutMe,Education=Education,Experience=Experience,AditionalInfo=AditionalInfo,Skills=Skills,Hobbies=Hobbies,Language1=Language1,Language2=Language2,Language3=Language3,Language4=Language4,levelL1=levelL1,levelL2=levelL2,levelL3=levelL3,levelL4=levelL4)
                 pdf = pdfkit.from_string(render, False)
                 response = make_response(pdf)
                 response.headers['Content-Type'] = 'application/pdf'
-                response.headers['Content-Disposition'] = 'inline;filename=CV of '+fname+lname+'.pdf'
+                response.headers['Content-Disposition'] = 'attachment;filename=CV of '+fname+lname+'.pdf'
                 if os.path.exists(full_filename):
                     os.remove(full_filename)
                 return response
@@ -116,5 +116,5 @@ class Page(object):
                 pdf = pdfkit.from_string(render, False)
                 response = make_response(pdf)
                 response.headers['Content-Type'] = 'application/pdf'
-                response.headers['Content-Disposition'] = 'inline;filename=Cover Letter of ' + fname + lname + '.pdf'
+                response.headers['Content-Disposition'] = 'attachment;filename=Cover Letter of ' + fname + lname + '.pdf'
                 return response
